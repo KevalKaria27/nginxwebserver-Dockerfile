@@ -1,0 +1,24 @@
+-	In CentOS Linux server and become root user. Create a Docker directory. 
+mkdir Docker
+cd Docker
+-	In Docker directory, Create a index.html.
+vim index.html
+<html>
+<body>
+<h1> “Hello World” </h1>
+</body>
+</html>
+-	In a Docker directory, Create a Dockerfile.
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/
+-	Build the image using docker build. Docker is the directory where Dockerfile is present and -t option is to tag or name the image.
+docker build -t nginxwebserver:v1 .
+-	Run Docker imgae.
+docker run -dit -p 8081:80 nginxwebserver:v1
+To result on web browser.
+-	curl localhost:8081
+-	Ifconfig
+docker0 – inet:172.17.0.1
+So, for test we can write in a web browser
+172.17.0.1:8081 
+
