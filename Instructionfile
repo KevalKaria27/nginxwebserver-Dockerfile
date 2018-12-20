@@ -22,7 +22,7 @@ COPY index.html /usr/share/nginx/html/
 docker build -t nginxwebserver.
 
 -	Docker Push to Docker hub repo.
-
+ Needed login to push image to docker hub repo
 docker tag nginxwebserver kevalkaria/webserver:v1
 docker push kevalkaria/webserver:v1
 
